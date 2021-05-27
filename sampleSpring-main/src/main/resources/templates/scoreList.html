@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Title</title>
+</head>
+  <body>
+    <form method="get" action="scoreList2">
+      年月：<input type="text" name="nengetsu" placeholder="yyyy/mm"/>
+      id：<input type="text" name="id"/>
+      <input type="submit" value="検索"/>
+    </form>
+    <h1 th:text="${scoreStudent}"></h1>
+    <table border="1">
+      <thead>
+      <tr>
+        <th>年月</th>
+        <th>合計</th>
+        <th>平均</th>
+        <th>平均(四捨五入)</th>
+      </tr>
+      </thead>
+      <tr th:each="scoreListNengetsu : ${scoreListNengetsu}">
+        <td th:text="${scoreListNengetsu.nengetsu}"></td>
+        <td th:text="${scoreListNengetsu.scoreSum}"></td>
+        <td th:text="${scoreListNengetsu.scoreAvg}"></td>
+        <td th:text="${scoreListNengetsu.scoreAvg_round}"></td>
+      </tr>
+    </table>
+    <h1>成績詳細</h1>
+    <table border="1">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>氏名</th>
+        <th>試験日</th>
+        <th>科目</th>
+        <th>成績</th>
+      </tr>
+      </thead>
+      <tr th:each="scoreListDetail : ${scoreListDetail}">
+        <td th:text="${scoreListDetail.student_id}"></td>
+        <td th:text="${scoreListDetail.studentName}"></td>
+        <td th:text="${scoreListDetail.testDate}"></td>
+        <td th:text="${scoreListDetail.subject}"></td>
+        <td th:text="${scoreListDetail.score}"></td>
+      </tr>
+    </table>
+  </body>
+</html>

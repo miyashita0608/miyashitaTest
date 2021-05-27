@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Title</title>
+</head>
+  <body>
+    <form method="get" action="studentEdit">
+      <table border="1">
+        <thead>
+        <tr>
+          <th></th>
+          <th>id</th>
+          <th>氏</th>
+          <th>名</th>
+          <th>セイ</th>
+          <th>メイ</th>
+          <th>郵便番号</th>
+          <th>電話番号</th>
+          <th>学部</th>
+          <th>学科</th>
+        </tr>
+        </thead>
+        <tr th:each="studentList : ${studentList}">
+          <td><input type="radio" name="id" th:value="${studentList.id}"/></td>
+          <td th:text="${studentList.id}"></td>
+          <td th:text="${studentList.familyName}"></td>
+          <td th:text="${studentList.firstName}"></td>
+          <td th:text="${studentList.familyNameKana}"></td>
+          <td th:text="${studentList.firstNameKana}"></td>
+          <td th:text="${studentList.tel}"></td>
+          <td th:text="${studentList.post}"></td>
+          <td th:text="${studentList.undergraduate}"></td>
+          <td th:text="${studentList.department}"></td>
+        </tr>
+      </table>
+      <input type="submit" name="send" value="更新"/>
+      <input type="submit" name="send" value="成績照会"/>
+    </form>
+    <form method="get" action="studentEdit">
+      <input type="hidden" name="id" value="-1"/>
+      <input type="submit" name="send" value="新規"/>
+    </form>
+  </body>
+</html>

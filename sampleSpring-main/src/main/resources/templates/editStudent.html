@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Title</title>
+</head>
+<body>
+
+<h1>Students</h1>
+
+  <form method="POST" action="edit" th:object="${studentList}">
+    <table>
+      <tr>
+        <td>id</td>
+        <td><input type="text" name="id" th:field="${studentList.id}"/></td>
+      </tr>
+      <tr>
+        <td>氏</td>
+        <td><input type="text" name="familyName" th:field="${studentList.familyName}"/></td>
+      </tr>
+      <tr>
+        <td>名</td>
+        <td><input type="text" name="firstName" th:field="${studentList.firstName}"/></td>
+      </tr>
+      <tr>
+        <td>セイ</td>
+        <td><input type="text" name="familyNameKana" th:field="${studentList.familyNameKana}"/></td>
+      </tr>
+      <tr>
+        <td>メイ</td>
+        <td><input type="text" name="firstNameKana" th:field="${studentList.firstNameKana}"/></td>
+      </tr>
+      <tr>
+        <td>電話番号</td>
+        <td><input type="text" name="tel" th:field="${studentList.tel}"/></td>
+      </tr>
+      <tr>
+        <td>郵便番号</td>
+        <td><input type="text" name="post" th:field="${studentList.post}"/></td>
+      </tr>
+      <tr>
+        <td>学部</td>
+        <td><input type="text" name="undergraduate" th:field="${studentList.undergraduate}"/></td>
+      </tr>
+      <tr>
+        <td>学科</td>
+        <td><input type="text" name="department" th:field="${studentList.department}"/></td>
+      </tr>
+    </table>
+    <button type="submit">Create student</button>
+  </form>
+</body>
+</html>
